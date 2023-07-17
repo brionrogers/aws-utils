@@ -13,7 +13,9 @@ class SecurityGroupObj:
     self.sgId = sgId
     self.sgRuleDescription = sgRuleDescription
 
+# Specify profile here
 session = boto3.Session(profile_name='production')
+# Specify region here, remove arg if you want to query all regions
 ec2 = session.client('ec2', region_name='us-east-1')
 sgs = ec2.describe_security_groups()
 
